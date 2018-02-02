@@ -77,7 +77,7 @@ module.exports = {
         new webpack.NamedModulesPlugin(),
         new ExtractTextPlugin({
             filename: 'app.css',
-            disable: true,
+            disable: false,
             allChunks: true
         })
     ]
