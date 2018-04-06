@@ -6,6 +6,7 @@ import projectReducer from './projects'
 
 
 const appReducer = combineReducers({
+    user: () => ({}),
     projects: projectReducer,
     activeProject: activeProjectReducer
 })

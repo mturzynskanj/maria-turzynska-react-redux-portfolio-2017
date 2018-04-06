@@ -23,6 +23,7 @@ module.exports = {
        // stats: 'errors-only',
        // open : true
     },
+    devtool: 'source-map',
 
     module: {
         rules:[
@@ -58,6 +59,10 @@ module.exports = {
             {
                 test:/\.(jpe?g|png|gif|svg)$/,
                 use:'file-loader'
+            },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                loader: 'file-loader?name=public/fonts/[name].[ext]'
             }
             
         ]

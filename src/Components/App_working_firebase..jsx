@@ -1,6 +1,6 @@
 
 import React from 'react'
-import fire from './firebase'
+import app from './firebase'
 
 import _ from 'lodash'
 
@@ -14,7 +14,7 @@ class App extends React.Component {
     }
    
     componentWillMount(){     
-        let projectsRef = fire.database().ref('projects').once('value')
+        let projectsRef = app.database().ref('projects').once('value')
             .then((snapshot)=>this.setState({projects: snapshot.val()}))    
     }
   

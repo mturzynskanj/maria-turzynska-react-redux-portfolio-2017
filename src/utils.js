@@ -1,6 +1,6 @@
 
-import fire from './firebase'
+import app from './firebase'
 
 export function getProjects(){
-    return  fire.database().ref('projects').once('value')
+    return  app.database().ref('projects').once('value')
 }

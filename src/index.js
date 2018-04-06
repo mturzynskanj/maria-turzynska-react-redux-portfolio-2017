@@ -5,19 +5,21 @@ import ReactDOM from 'react-dom'
 import App from './Components/App.jsx'
 import style from './styles/index.scss'
 
-import fire from './firebase'
+import app_firebase from './firebase'
 
-import {fromDB} from './actions/utils'
+import { fromDB } from './actions/utils'
 
-import {createStore} from 'redux'
+import { createStore } from 'redux'
 
 import appReducer from './reducers'
 
-let store = createStore(appReducer)
+import middleware from './store/middleware'
 
-let db = fire.database();
+let store = createStore(appReducer, middleware);
 
-fromDB(db,store.dispatch);
+let db = app_firebase.database();
+
+fromDB(db, store.dispatch);
 
 /*
 const showState = () => {
@@ -30,4 +32,4 @@ showState();
 console.log('store state', store.getState())
 */
 
-ReactDOM.render(<App  store = {store} />, document.getElementById('main'))
+ReactDOM.render(<App store={store} />, document.getElementById('main'))
