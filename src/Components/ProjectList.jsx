@@ -14,7 +14,7 @@ const ProjectList = ({ projects, activeProject, setActiveProject }) => {
                 {
                     _.map(projects, (project, index) => {
                         return (
-                            <ProjectItem key={project.name} {...project} activeProject={activeProject} setActiveProject={setActiveProject} />
+                            <ProjectItem key={index} {...project} activeProject={activeProject} setActiveProject={setActiveProject} />
                         )
                     })
                 }
