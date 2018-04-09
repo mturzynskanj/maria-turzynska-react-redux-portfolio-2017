@@ -29,7 +29,7 @@ const  Home = ()=> {
                 <div className="spinner-block">
                     <div className="icon-wrap">
                         <NavLink className="effect-opacity" to='/aboutMe'>
-                            <a className="effect-opacity effect-spin" href="aboutMe"><i className="fa fa-user"></i></a>                      
+                            <div className="effect-opacity effect-spin" href="aboutMe"><i className="fa fa-user"></i></div>                      
                             <div className='md-txt'>About Me <i className="fa fa-caret-right"></i></div>
                         </NavLink>
                     </div>
@@ -37,7 +37,7 @@ const  Home = ()=> {
                 <div className="spinner-block">
                     <div className="icon-wrap">
                         <NavLink className="effect-opacity" to='/resume'>
-                            <a className="effect-opacity effect-spin" href="myResume"><i className='fa fa-thumbs-o-up'></i></a>                      
+                            <div className="effect-opacity effect-spin" href="myResume"><i className='fa fa-thumbs-o-up'></i></div>                      
                             <div className="md-txt"> My Resume <i className="fa fa-caret-right"></i></div>
                         </NavLink>
                     </div>
@@ -45,7 +45,7 @@ const  Home = ()=> {
                 <div className="spinner-block">
                     <div className="icon-wrap">
                         <NavLink className="effect-opacity"  to="/portfolio">
-                            <a className="effect-opacity effect-spin" href="portfolio"><i className='fa fa-gears'></i></a>                       
+                            <div className="effect-opacity effect-spin" href="portfolio"><i className='fa fa-gears'></i></div>                       
                             <div className="md-txt"> My Portfolio <i className="fa fa-caret-right"></i></div>
                         </NavLink>
                     </div>

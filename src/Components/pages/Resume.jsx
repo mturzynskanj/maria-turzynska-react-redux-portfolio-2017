@@ -5,7 +5,7 @@ import React from 'react'
 
 const  Resume = ()=> {
     return (
-    <section class='page'>
+    <section className='page'>
     <div>
     <section className="resume">
         <section className="panel">

@@ -19,7 +19,9 @@ class LoginForm extends Component {
                 password: ''
             },
             loading: false,
-            errors: {}
+            errors: {},
+            globalErrors: ''
+
         }
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -36,8 +38,16 @@ class LoginForm extends Component {
     onSubmit() {
         const errors = this.validate(this.state.data);
         this.setState({ errors });
-        if(Object.keys(errors).length === 0){
-            this.props.submit(this.state.data);
+        if (Object.keys(errors).length === 0) {
+            this.setState({loading: true})
+            this.props.submit(this.state.data)
+                .catch(err => this.setState(prevState =>({
+                    errors: {
+                        ...prevState.errors,
+                        'global': err.message
+                    },
+                    loading : false
+                })))
         }
     }
 
@@ -51,10 +61,12 @@ class LoginForm extends Component {
     }
 
     render() {
-        const { data, errors } = this.state;
+        const { data, errors, globalErrors, loading } = this.state;
         return (
             <div className="ui container">
                 <Form onSubmit={this.onSubmit}>
+                     {loading &&  <p>Loading...</p>}
+                     {errors.global && <InlineError text={errors.global} />} 
                     <Form.Field error={!!errors.email}>
                         <label htmlFor="email">Email</label>
                         <input

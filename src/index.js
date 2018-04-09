@@ -5,9 +5,9 @@ import ReactDOM from 'react-dom'
 import App from './Components/App.jsx'
 import style from './styles/index.scss'
 
-import app_firebase from './firebase'
+//import app_firebase from './firebase'
 
-import { fromDB } from './actions/utils'
+import  getDataFromFirebase  from './actions/utils'
 
 import { createStore } from 'redux'
 
@@ -15,11 +15,17 @@ import appReducer from './reducers'
 
 import middleware from './store/middleware'
 
-let store = createStore(appReducer, middleware);
+import enhancer from './store'
 
-let db = app_firebase.database();
+console.log('what is middleware....', middleware);
 
-fromDB(db, store.dispatch);
+let store = createStore(appReducer, enhancer);
+
+//let db = app_firebase.database();
+
+//getDataFromFirebase(store.dispatch);
+
+//getDataFromFirebase();
 
 /*
 const showState = () => {

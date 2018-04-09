@@ -1,24 +1,19 @@
 
-
-import {GET_PROJECTS} from '../actionTypes'
-
+import { GET_PROJECTS } from '../actionTypes'
+import getProjects from './projects'
+import userLoggedIn from './currentUser'
+import api from '../api'
 import _ from 'lodash'
 
 
-export const fromDB = (db, dispatch) => {
-    db.ref('projects').once('value')
-        .then((snapshot) =>  dispatch ( 
-            { 
-                type: GET_PROJECTS, 
-                projects: _.sortBy(_.values(snapshot.val()),(project)=> project.id).reverse()
-            } 
-        ))
-        }
-    
+export const getDataFromFirebase = () => (dispatch) => {
+    return api.projects.get().then(projects => dispatch(getProjects(projects)));
+}
 
 
-/*
- let projectsRef = fire.database().ref('projects').once('value')
-            .then((snapshot)=>this.setState({projects: snapshot.val()}))  
+export const userLogin = (credentials) => (dispatch) => {
+    return api.user.login(credentials).then(user => dispatch(userLoggedIn(user)))
+}
 
-*/
+
+
