@@ -4,18 +4,16 @@ import PropTypes from 'prop-types';
 
 import app_firebase from '../../firebase'
 
-
-
-
 class LoginPage extends Component {
     constructor(props) {
-        console.log('what are props', props);
         super(props);
         this.submit = this.submit.bind(this)
     }
+
     submit(data) {
        return  this.props.userLogin(data).then(() => this.props.history.push('./admin'))
     }
+
     render() {
         return (
             <div className="page">
@@ -32,6 +30,5 @@ LoginPage.propTypes = {
     }).isRequired
     //login: PropTypes.func.isRequired
 };
-
 
 export default LoginPage;

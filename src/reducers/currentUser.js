@@ -1,16 +1,16 @@
 import { USER_LOGGED_IN } from '../actionTypes'
+import { USER_LOGGED_OUT } from '../actionTypes'
 
-function currentUserReducer(state={}, action){
-   // console.log('action....', );
-   let currentUser = action.currentUser;
- 
-    switch(action.type){
-        case USER_LOGGED_IN:{
-            let user = {email: currentUser.email, token: currentUser.refreshToken};
-            console.log('current User', currentUser.email, currentUser.refreshToken)
-            return Object.assign({}, ...state, {user})
+function currentUserReducer(state = {}, action) {
+    const { currentUser } = action;
+    switch (action.type) {
+        case USER_LOGGED_IN: {
+            return { ...state, ...currentUser }
         }
-        default: 
+        case USER_LOGGED_OUT: {
+            return {}
+        }
+        default:
             return state;
     }
 };

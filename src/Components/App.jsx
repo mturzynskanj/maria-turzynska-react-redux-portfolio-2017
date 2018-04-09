@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import "semantic-ui-css/semantic.min.css";
 
-import Header from './Header.jsx'
+import HeaderContainer from '../Containers/HeaderContainer.jsx'
 import Footer from './Footer.jsx'
 import HomePage from './pages/Home.jsx'
 import Resume from './pages/Resume.jsx'
@@ -21,9 +21,9 @@ const App = ({ store }) =>
     <Provider store={store} >
         <BrowserRouter>
             <div className="main-content">
-                <Route exact path="/" component={Header} />
-                <Route exact path="/login" component={Header}/>
-                <Route exact path="/admin" component={Header} />
+                <Route exact path="/" component={HeaderContainer} />
+                <Route exact path="/login" component={HeaderContainer}/>
+                <Route exact path="/admin" component={HeaderContainer} />
                 <Route exact path='/aboutThisSite' component={Navigation} />
                 <Route path='/aboutMe' component={Navigation} />
                 <Route path='/resume' component={Navigation} />
