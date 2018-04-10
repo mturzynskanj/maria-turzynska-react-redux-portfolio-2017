@@ -11,7 +11,7 @@ class LoginPage extends Component {
     }
 
     submit(data) {
-       return  this.props.userLogin(data).then(() => this.props.history.push('./admin'))
+       return  this.props.userLogin(data).then(() => this.props.history.push('./adminDashboard'))
     }
 
     render() {

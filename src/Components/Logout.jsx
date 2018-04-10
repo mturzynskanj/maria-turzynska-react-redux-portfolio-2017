@@ -1,10 +1,23 @@
 import React, { Component } from 'react';
 
-const  Logout = ({userLogout})=> {
-        console.log('user loggin out....', userLogout);
-        return (
-            <button onClick={userLogout}>Logout</button>
-        );
+class Logout extends Component {
+    constructor(props) {
+        super(props);
+      
+        this.handleClick = this.handleClick.bind(this);
     }
+
+    handleClick() {
+        const {userLogout, ...rest} = this.props;
+        console.log('what is rest ...', rest);
+        userLogout().then(() => rest.history.push('/'));
+    }
+
+    render() {
+        return (
+            <button onClick={this.handleClick}>Logout</button>
+        )
+    }
+}
 
 export default Logout;

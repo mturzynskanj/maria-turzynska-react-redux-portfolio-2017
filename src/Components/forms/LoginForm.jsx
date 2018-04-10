@@ -52,7 +52,6 @@ class LoginForm extends Component {
     }
 
     validate(data) {
-        console.log('inside validate', data);
         const errors = {};
         if (!Validator.isEmail(data.email)) errors.email = "Invalid email";
         if (!data.password) errors.password = "Can't be blank";
