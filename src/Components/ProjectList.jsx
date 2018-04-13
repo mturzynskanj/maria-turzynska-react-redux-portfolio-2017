@@ -4,7 +4,7 @@ import ProjectItem from './ProjectItem.jsx'
 import _ from 'lodash'
 
 // const ProjectList = ({ projects, activeProject, setActiveProject, getDataFromFirebase}) => {
-    
+
 //     return (
 //         <div id='projects'>
 //             <ul id='project_list'>
@@ -24,14 +24,15 @@ import _ from 'lodash'
 
 
 class ProjectList extends React.Component {
-    constructor(props){
+    constructor(props) {
         console.log('what are props', props);
         super(props)
     }
 
-    componentDidMount(){
-        console.log('inside component did mount....');
-        this.props.getDataFromFirebase()
+    componentDidMount() {
+        //if(this.props.projects.length === 0) {
+            this.props.projects.length === 0 && this.props.getDataFromFirebase() 
+       // }    
     }
     render() {
         return (
@@ -40,7 +41,7 @@ class ProjectList extends React.Component {
                     {
                         _.map(this.props.projects, (project, index) => {
                             return (
-                                <ProjectItem key={index} {...project} {...this.props} />
+                                <ProjectItem key={project.shortName} {...project} {...this.props} />
                             )
                         })
                     }
@@ -48,7 +49,7 @@ class ProjectList extends React.Component {
             </div>
         )
     }
-    
+
 }
 
 export default ProjectList;

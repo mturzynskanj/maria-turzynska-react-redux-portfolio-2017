@@ -65,7 +65,14 @@ ul li ul{
     opacity : 1.0;
 }
 
+.hidden-component.hide {
+    display: none;
+}
 
+.hidden-component.show {
+    display: block;
+}
+    
 html {
     height:100%;
     font-size:14px;
@@ -116,6 +123,11 @@ header {
         color:$txt-base-color;
     }
 } // end of the main content
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+}
 
 .main-content {
     .bar {

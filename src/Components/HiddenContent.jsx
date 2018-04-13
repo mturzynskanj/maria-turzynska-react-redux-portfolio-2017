@@ -4,11 +4,12 @@ import React from 'react'
 export default class HiddenContent extends React.Component {
     constructor(props) {
         super(props)
+        this.myRef = React.createRef()
         this.state = {
             isVisible: this.props.isChildVisible
 
         }
-        this.componentClasses = ['show']
+        this.componentClasses = []
     }
 
     componentWillReceiveProps(nextProps) {
@@ -20,14 +21,14 @@ export default class HiddenContent extends React.Component {
         const { isVisible } = this.state
 
         if (!isVisible) {
-            this.componentClasses = []
+            this.componentClasses = ['hidden-component hide']
         }
         else {
-            this.componentClasses.push('show')
+            this.componentClasses= ['hidden-component show']
         }
 
         return (
-            <div className={this.componentClasses.join(' ')}>
+            <div ref={this.ref} className={this.componentClasses.join(' ')}>
                 {children}
             </div>
 

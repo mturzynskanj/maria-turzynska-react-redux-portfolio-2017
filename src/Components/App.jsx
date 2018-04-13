@@ -14,7 +14,7 @@ import AboutMe from './pages/AboutMe.jsx'
 import Portfolio from './pages/Portfolio.jsx'
 import LoginPageContainer from '../Containers/LoginPageContainer.jsx'
 import LoginBarContainer from '../Containers/LoginBarContainer.jsx'
-import AdminPage from './pages/AdminPage.jsx'
+import AdminPageContainer from '../Containers/AdminPageContainer.jsx'
 import AdminRoute from './routes/AdminRoute.jsx'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
@@ -35,7 +35,7 @@ const App = ({ store }) =>
                 <Switch>
                     <Route exact path='/' component={HomePage} />
                     <Route exact path='/login' component={LoginPageContainer} />
-                    <AdminRoute exact path='/adminDashboard' component={AdminPage} />
+                    <AdminRoute exact path='/adminDashboard' component={AdminPageContainer} />
                     <Route exact path='/aboutThisSite' component={AboutThisSite} />
                     <Route path="/aboutMe" component={AboutMe} />
                     <Route path="/resume" component={Resume} />

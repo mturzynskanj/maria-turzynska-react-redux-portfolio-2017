@@ -2,8 +2,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-
-
 const Navigation = ({ isAuthenicated }) => {
     console.log('isAuthenicated...', isAuthenicated)
     return (
@@ -17,9 +15,6 @@ const Navigation = ({ isAuthenicated }) => {
                             <li><NavLink to='/resume'><span>&#123;</span>Resume<span>&#125;</span></NavLink></li>
                             <li><NavLink to='/portfolio'><span>&#123;</span>Portfolio<span>&#125;</span></NavLink></li>
                             {isAuthenicated && <li><NavLink to='/adminDashboard'><span>&#123;</span>Admin<span>&#125;</span></NavLink></li>}
-                            {/* <li><NavLink to='/adminDashboard'><span>&#123;</span>Admin<span>&#125;</span></NavLink></li>
-                            <li><NavLink to='/portfolio'><span>&#123;</span>,,,,,{isAuthenticated}<span>&#125;</span></NavLink></li> */}
-
                         </ul>
                     </div>
                 </section>

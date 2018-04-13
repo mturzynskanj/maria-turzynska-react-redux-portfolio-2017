@@ -28,7 +28,7 @@ export default class ProjectItem extends React.Component {
                         <HiddenContent isChildVisible={this.state.isChildVisible} >
                             <div className="details">
                                 <p><span>Website:</span><a href={this.props.url} target="_blank">{this.props.url}</a></p>
-                                <p><span>Client:</span>{this.props.client.name}</p>
+                                <p><span>Client:</span>{this.props.name}</p>
                                 <p><span>My Role:</span>{this.props.information}</p>
                             </div>
                         </HiddenContent>
