@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { Form, Button } from "semantic-ui-react";
 import PropTypes from 'prop-types';
-
 import Validator from 'validator'
-
+import { Form, Button, FormWrapper, FieldSet, Input} from '../../styled/styledForms'
+import {Page} from '../../styled/styledGlobal'
 import { updateProject } from '../../actions/utils'
-
 import InlineError from '../messages/InlineError.jsx'
 
 class ProjectForm extends Component {
+
+
     constructor(props) {
         console.log('Project Form==', props);
         super(props);
@@ -85,15 +85,14 @@ class ProjectForm extends Component {
 
     render() {
         const { data, errors, globalErrors, loading } = this.state;
-        return (
-            <div className="ui container">
+        return (  
                 <Form onSubmit={this.onSubmitUpdates}>
                     {loading && <p>Loading...</p>}
                     {errors.global && <InlineError text={errors.global} />}
 
-                    <Form.Field>
+                    <FieldSet>
                         <label htmlFor="id">Project Id</label>
-                        <input
+                        <Input
                             type="text"
                             name="id"
                             placeholder="enter integer "
@@ -101,11 +100,11 @@ class ProjectForm extends Component {
                             onChange={this.onChange}
                         />
                         {errors.id && <InlineError text={errors.id} />}
-                    </Form.Field>
+                    </FieldSet>
 
-                     <Form.Field>
+                     <FieldSet>
                         <label htmlFor="shortName">ShortName</label>
-                        <input
+                        <Input
                             type="text"
                             id="shortName"
                             name="shortName"
@@ -114,11 +113,11 @@ class ProjectForm extends Component {
                             onChange={this.onChange}
                         />
                         {errors.shortName && <InlineError text={errors.shortName} />}
-                    </Form.Field>
+                    </FieldSet>
 
-                    <Form.Field>
+                    <FieldSet>
                         <label htmlFor="Image">Image</label>
-                        <input
+                        <Input
                             type="text"
                             id="image"
                             name="image"
@@ -127,11 +126,11 @@ class ProjectForm extends Component {
                             onChange={this.onChange}
                         />
                         {errors.image && <InlineError text={errors.image} />}
-                    </Form.Field>
+                    </FieldSet>
                     
-                    <Form.Field>
+                    <FieldSet>
                         <label htmlFor="name">Name</label>
-                        <input
+                        <Input
                             type="text"
                             id="name"
                             name="name"
@@ -140,10 +139,10 @@ class ProjectForm extends Component {
                             onChange={this.onChange}
                         />
                         {errors.name && <InlineError text={errors.name} />}
-                    </Form.Field>
-                    <Form.Field>
+                    </FieldSet>
+                    <FieldSet>
                         <label htmlFor="url">Url</label>
-                        <input
+                        <Input
                             type="text"
                             id="url"
                             name="url"
@@ -152,10 +151,10 @@ class ProjectForm extends Component {
                             onChange={this.onChange}
                         />
                         {errors.url && <InlineError text={errors.url} />}
-                    </Form.Field>
-                    <Form.Field>
+                    </FieldSet>
+                    <FieldSet>
                         <label htmlFor="information">information</label>
-                        <input
+                        <Input
                             type="text"
                             id="information"
                             name="information"
@@ -164,11 +163,9 @@ class ProjectForm extends Component {
                             onChange={this.onChange}
                         />
                         {errors.information && <InlineError text={errors.information} />}
-                    </Form.Field>
+                    </FieldSet>
                     <Button primary>Submit Project</Button>
                 </Form>
-
-            </div>
         );
     }
 }

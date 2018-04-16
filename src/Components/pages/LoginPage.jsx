@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import styled, { injectGlobal } from 'styled-components'
+import {Wrapper, Page } from '../../styled/styledGlobal'
+
 import LoginForm from '../forms/LoginForm.jsx';
 import PropTypes from 'prop-types';
-
 import app_firebase from '../../firebase'
 
 class LoginPage extends Component {
@@ -16,10 +18,10 @@ class LoginPage extends Component {
 
     render() {
         return (
-            <div className="page">
-                <h3>Login Page ....</h3>
+            <Page>
+                <h2>Administrator Login</h2>
                 <LoginForm submit={this.submit} />
-            </div>
+            </Page>
         );
     }
 }

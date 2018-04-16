@@ -1,20 +1,18 @@
 
 import React from 'react'
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import styled, { injectGlobal } from 'styled-components'
+import {Wrapper, Page } from '../../styled/styledGlobal'
 
-/*
- <li><NavLink to='/aboutThisSite'><span>&#123;</span>About this site<span>&#125;</span></NavLink></li>
-                    <li><NavLink to='/aboutMe'><span>&#123;</span>About Me<span>&#125;</span></NavLink></li>
-                    <li><NavLink to='/resume'><span>&#123;</span>Resume<span>&#125;</span></NavLink></li>
-                    <li><NavLink to='/portfolio'><span>&#123;</span>Portfolio<span>&#125;</span></NavLink></li>
+injectGlobal`
 
 
 
-*/
+`;
 
-const  Home = ()=> {
+const Home = () => {
     return (
-        <section className='page'>
+        <Page>
             <h2>Better, Faster, Cleaner Code </h2>
             <section className="spinning-nav">
                 <div className="spinner-block">
@@ -28,7 +26,7 @@ const  Home = ()=> {
                 <div className="spinner-block">
                     <div className="icon-wrap">
                         <NavLink className="effect-opacity" to='/aboutMe'>
-                            <div className="effect-spin"><i className="fa fa-user"></i></div>                      
+                            <div className="effect-spin"><i className="fa fa-user"></i></div>
                             <div className='md-txt'>About Me <i className="fa fa-caret-right"></i></div>
                         </NavLink>
                     </div>
@@ -36,22 +34,22 @@ const  Home = ()=> {
                 <div className="spinner-block">
                     <div className="icon-wrap">
                         <NavLink className="effect-opacity" to='/resume'>
-                            <div className="effect-spin"><i className='fa fa-thumbs-o-up'></i></div>                      
+                            <div className="effect-spin"><i className='fa fa-thumbs-o-up'></i></div>
                             <div className="md-txt"> My Resume <i className="fa fa-caret-right"></i></div>
                         </NavLink>
                     </div>
                 </div>
                 <div className="spinner-block">
                     <div className="icon-wrap">
-                        <NavLink className="effect-opacity"  to="/portfolio">
-                            <div className="effect-spin"><i className='fa fa-gears'></i></div>                       
+                        <NavLink className="effect-opacity" to="/portfolio">
+                            <div className="effect-spin"><i className='fa fa-gears'></i></div>
                             <div className="md-txt"> My Portfolio <i className="fa fa-caret-right"></i></div>
                         </NavLink>
                     </div>
                 </div>
             </section>
-        </section>
-    )  
+        </Page>
+    )
 }
 
-export default  Home
+export default Home

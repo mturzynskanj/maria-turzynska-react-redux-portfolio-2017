@@ -1,9 +1,10 @@
 
 import React from 'react'
+import {Wrapper, Page } from '../../styled/styledGlobal'
 
 
 const AboutMe = () =>
-    <section className='page'>
+    <Page>
         <h2>About Me</h2>
         <div className="about-me-wrapper">
             <ul className="indented-list">
@@ -29,7 +30,7 @@ const AboutMe = () =>
                 </li>
             </ul>
         </div>
-    </section>
+   </Page>
 
 
 export default AboutMe

@@ -1,13 +1,12 @@
 
 import React, { Component } from 'react';
-import { Form, Button } from "semantic-ui-react";
 import PropTypes from 'prop-types';
-
-
-
 import Validator from 'validator'
 
 import InlineError from '../messages/InlineError.jsx'
+
+import styled from 'styled-components'
+import { Form, Button, FormWrapper, FieldSet, Input} from '../../styled/styledForms'
 
 
 class LoginForm extends Component {
@@ -35,18 +34,19 @@ class LoginForm extends Component {
         this.setState({ errors });
     }
 
-    onSubmit() {
+    onSubmit(e) {
+        e.preventDefault();
         const errors = this.validate(this.state.data);
         this.setState({ errors });
         if (Object.keys(errors).length === 0) {
-            this.setState({loading: true})
+            this.setState({ loading: true })
             this.props.submit(this.state.data)
-                .catch(err => this.setState(prevState =>({
+                .catch(err => this.setState(prevState => ({
                     errors: {
                         ...prevState.errors,
                         'global': err.message
                     },
-                    loading : false
+                    loading: false
                 })))
         }
     }
@@ -62,38 +62,40 @@ class LoginForm extends Component {
     render() {
         const { data, errors, globalErrors, loading } = this.state;
         return (
-            <div className="ui container">
+            <FormWrapper>
                 <Form onSubmit={this.onSubmit}>
-                     {loading &&  <p>Loading...</p>}
-                     {errors.global && <InlineError text={errors.global} />} 
-                    <Form.Field error={!!errors.email}>
+                    {loading && <p>Loading...</p>}
+                    {errors.global && <InlineError text={errors.global} />}
+                  
+                    <FieldSet>
                         <label htmlFor="email">Email</label>
-                        <input
+                        <Input
                             type="email"
                             id="email"
                             name="email"
                             placeholder="example@example.com"
                             value={data.email}
                             onChange={this.onChange}
+                            myerror = {!!errors.email}
                         />
                         {errors.email && <InlineError text={errors.email} />}
-                    </Form.Field>
-                    <Form.Field error={!!errors.password}>
+                    </FieldSet>
+                    <FieldSet>
                         <label htmlFor="password">Password</label>
-                        <input
+                        <Input
                             type="password"
                             id="password"
                             name="password"
                             placeholder="password"
                             value={data.password}
                             onChange={this.onChange}
+                            myerror = {!!errors.password}
                         />
                         {errors.password && <InlineError text={errors.password} />}
-                    </Form.Field>
-                    <Button primary>Login...</Button>
+                    </FieldSet>
+                    <Button primary>Login</Button>
                 </Form>
-
-            </div>
+            </FormWrapper>
         );
     }
 }

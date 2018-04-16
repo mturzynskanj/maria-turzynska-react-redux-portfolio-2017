@@ -1,0 +1,114 @@
+[debug] [2018-04-16T20:05:23.805Z] ----------------------------------------------------------------------
+[debug] [2018-04-16T20:05:23.809Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-04-16T20:05:23.810Z] CLI Version:   3.16.0
+[debug] [2018-04-16T20:05:23.810Z] Platform:      darwin
+[debug] [2018-04-16T20:05:23.810Z] Node Version:  v8.9.1
+[debug] [2018-04-16T20:05:23.811Z] Time:          Mon Apr 16 2018 16:05:23 GMT-0400 (EDT)
+[debug] [2018-04-16T20:05:23.811Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-16T20:05:23.860Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-16T20:05:23.860Z] > authorizing via signed-in user
+[debug] [2018-04-16T20:05:23.862Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-04-16T20:05:23.862Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/XUrcStadJUVeVjVklUVD0lL_tS9BHuYXD-dN8chSwzI',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Mon Apr 16 2018 16:05:23 GMT-0400 (EDT)
+[debug] [2018-04-16T20:05:24.119Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-16T20:05:24.280Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/mariaturzynska-portfolio  
+  
+ Mon Apr 16 2018 16:05:24 GMT-0400 (EDT)
+[debug] [2018-04-16T20:05:24.570Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-16T20:05:24.572Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/mariaturzynska-portfolio/tokens  
+  
+ Mon Apr 16 2018 16:05:24 GMT-0400 (EDT)
+[debug] [2018-04-16T20:05:24.888Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'mariaturzynska-portfolio'...
+[info] 
+[info] i  deploying database, hosting
+[info] i  database: checking rules syntax...
+[debug] [2018-04-16T20:05:25.202Z] >>> HTTP REQUEST PUT https://mariaturzynska-portfolio.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+ 
+ Mon Apr 16 2018 16:05:25 GMT-0400 (EDT)
+[debug] [2018-04-16T20:05:25.589Z] <<< HTTP RESPONSE 200
+[info] ✔  database: rules syntax for database mariaturzynska-portfolio is valid
+[info] i  hosting: preparing dist directory for upload...
+[debug] [2018-04-16T20:05:26.407Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/mariaturzynska-portfolio/uploads/-LAF2yLz0gsDB4fPznSU?fileCount=45&message=  
+  
+ Mon Apr 16 2018 16:05:26 GMT-0400 (EDT)
+[debug] [2018-04-16T20:12:27.936Z] <<< HTTP RESPONSE 502
+[debug] [2018-04-16T20:12:27.936Z] <<< HTTP RESPONSE BODY <html>
+<head><title>502 Bad Gateway</title></head>
+<body bgcolor="white">
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+
+[debug] [2018-04-16T20:12:28.023Z] TypeError: Cannot create property 'error' on string '<html>
+<head><title>502 Bad Gateway</title></head>
+<body bgcolor="white">
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+'
+    at module.exports (/usr/local/lib/node_modules/firebase-tools/lib/responseToError.js:11:16)
+    at Request._callback (/usr/local/lib/node_modules/firebase-tools/lib/api.js:45:25)
+    at Request.self.callback (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:186:22)
+    at emitTwo (events.js:126:13)
+    at Request.emit (events.js:214:7)
+    at Request.<anonymous> (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:1163:10)
+    at emitOne (events.js:116:13)
+    at Request.emit (events.js:211:7)
+    at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:1085:12)
+    at Object.onceWrapper (events.js:313:30)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2018-04-16T20:12:52.553Z] ----------------------------------------------------------------------
+[debug] [2018-04-16T20:12:52.557Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-04-16T20:12:52.557Z] CLI Version:   3.16.0
+[debug] [2018-04-16T20:12:52.557Z] Platform:      darwin
+[debug] [2018-04-16T20:12:52.557Z] Node Version:  v8.9.1
+[debug] [2018-04-16T20:12:52.558Z] Time:          Mon Apr 16 2018 16:12:52 GMT-0400 (EDT)
+[debug] [2018-04-16T20:12:52.558Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-16T20:12:52.663Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-16T20:12:52.663Z] > authorizing via signed-in user
+[debug] [2018-04-16T20:12:52.666Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/mariaturzynska-portfolio  
+  
+ Mon Apr 16 2018 16:12:52 GMT-0400 (EDT)
+[debug] [2018-04-16T20:12:53.182Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-16T20:12:53.184Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/mariaturzynska-portfolio/tokens  
+  
+ Mon Apr 16 2018 16:12:53 GMT-0400 (EDT)
+[debug] [2018-04-16T20:12:53.560Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'mariaturzynska-portfolio'...
+[info] 
+[info] i  deploying database, hosting
+[info] i  database: checking rules syntax...
+[debug] [2018-04-16T20:12:53.919Z] >>> HTTP REQUEST PUT https://mariaturzynska-portfolio.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+ 
+ Mon Apr 16 2018 16:12:53 GMT-0400 (EDT)
+[debug] [2018-04-16T20:12:54.193Z] <<< HTTP RESPONSE 200
+[info] ✔  database: rules syntax for database mariaturzynska-portfolio is valid
+[info] i  hosting: preparing dist directory for upload...
+[debug] [2018-04-16T20:12:55.032Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/mariaturzynska-portfolio/uploads/-LAF4fsR45Yaa6FM8T_N?fileCount=45&message=  
+  
+ Mon Apr 16 2018 16:12:55 GMT-0400 (EDT)

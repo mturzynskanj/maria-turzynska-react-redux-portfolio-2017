@@ -103,16 +103,16 @@ header {
 
 
 .main-content {
-    display:flex;
-    flex-direction: column;
-    height:100vh;
-    flex: 1;
-    justify-content: space-between;
+    // display:flex;
+    // flex-direction: column;
+    // height:100vh;
+    // flex: 1;
+    // justify-content: space-between;
 
     .page {
-        flex: 1;
-        margin: 0 auto;
-        box-sizing: border-box;
+        // flex: 1;
+        // margin: 0 auto;
+        // box-sizing: border-box;
     } 
 
 
@@ -194,7 +194,7 @@ header {
     }
 
     .panel.extra-spacing  p {
-        margin-bottom: 6px;
+        margin-bottom: 12px;
     }
 }  // end of resume 
   
