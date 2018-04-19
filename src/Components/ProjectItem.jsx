@@ -35,7 +35,8 @@ export default class ProjectItem extends React.Component {
                         <div className="controls control_off" >
                             <a href='javascript:void(0)' onClick={this.handleClick}>{this.state.isChildVisible ? 'Hide Details' : 'Show Details'}</a>
                         </div>
-                        <img src={`${this.props.image}`} />
+                        <img src={require(`../images/${this.props.image}`)} alt="c" />
+                        {/* <img src={`${this.props.image}`} /> */}
                     </li>
                 </ul>
             </li>
