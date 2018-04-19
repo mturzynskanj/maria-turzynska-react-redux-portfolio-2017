@@ -10,11 +10,11 @@ export const FormWrapper = styled.div`
 
 export const Form = styled.form`
     @media (min-width: 1200px){
-        width: 50%;
+        width: 40%;
         padding: 25px; 
     } 
     @media(min-width: 768px ){
-        width: 80%;
+        width: 50%;
         padding: 10px;
     }
     text-align: center;
@@ -43,22 +43,21 @@ export const Input = styled.input`
         width: 200px;
     } 
     @media (min-width: 768px){
-        width: 350px;
+        width: 280px;
     }  
 `;
 
 export const FieldSet = styled.fieldset`
     padding: 10px 0;
     position: relative;
+    text-align: right;
+    bottom: -15px; 
    
     span {
         position: absolute; 
-        @media (min-width: 375px){
-            bottom: -15px;
-        } 
         @media (min-width: 768px){
             right: 0;
-            bottom: 0px;
+            bottom:15px;
         }  
     }
 `;

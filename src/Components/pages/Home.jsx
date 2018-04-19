@@ -6,9 +6,8 @@ import {Wrapper, Page } from '../../styled/styledGlobal'
 
 injectGlobal`
 
-
-
 `;
+
 
 const Home = () => {
     return (

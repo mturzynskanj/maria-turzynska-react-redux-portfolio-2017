@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch, props) =>
 
 const ConnectedProjectList = connect(mapStateToProps, mapDispatchToProps)(ProjectList)
 
-export default ConnectedProjectList
+export default ConnectedProjectList;

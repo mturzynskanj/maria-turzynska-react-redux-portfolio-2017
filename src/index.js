@@ -18,16 +18,11 @@ import middleware from './store/middleware'
 import enhancer from './store'
 import userLoggedIn from './actions/loggedIn';
 
-console.log('what is middleware....', middleware);
-
 let store = createStore(appReducer, enhancer);
 
 if(localStorage.portfolioMT){
     const user = {token: localStorage.portfolioMT}
     store.dispatch(userLoggedIn(user))
 }
-
-//let db = app_firebase.database();
-
 
 ReactDOM.render(<App store={store} />, document.getElementById('main'))

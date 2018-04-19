@@ -19,7 +19,7 @@ export default class ProjectItem extends React.Component {
     }
 
     render() {
-
+        let imageSrc="https://firebasestorage.googleapis.com/v0/b/mariaturzynska-portfolio.appspot.com/o/images%2Fqblog.png?alt=media&token=d25212c1-47a0-41e9-8032-d9e756867a83"
         return (
             <li className="item">
                 <ul className={"collapsed " + (this.props.activeProject === this.props.id ? ' in' : '')} onClick={() => this.props.setActiveProject(this.props.id)} >
@@ -35,7 +35,7 @@ export default class ProjectItem extends React.Component {
                         <div className="controls control_off" >
                             <a href='javascript:void(0)' onClick={this.handleClick}>{this.state.isChildVisible ? 'Hide Details' : 'Show Details'}</a>
                         </div>
-                        <img src={require(`../images/${this.props.image}`)} alt="c" />
+                        <img src={`${this.props.image}`} />
                     </li>
                 </ul>
             </li>

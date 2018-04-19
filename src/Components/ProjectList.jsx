@@ -3,6 +3,8 @@ import React from 'react'
 import ProjectItem from './ProjectItem.jsx'
 import _ from 'lodash'
 
+import app_firebase from '../firebase'
+
 // const ProjectList = ({ projects, activeProject, setActiveProject, getDataFromFirebase}) => {
 
 //     return (
@@ -27,6 +29,7 @@ class ProjectList extends React.Component {
     constructor(props) {
         console.log('what are props', props);
         super(props)
+        
     }
 
     componentDidMount() {
@@ -41,7 +44,7 @@ class ProjectList extends React.Component {
                     {
                         _.map(this.props.projects, (project, index) => {
                             return (
-                                <ProjectItem key={project.shortName} {...project} {...this.props} />
+                                <ProjectItem key={project.shortName} {...project} {...this.props}  />
                             )
                         })
                     }
