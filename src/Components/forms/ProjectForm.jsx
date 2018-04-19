@@ -9,10 +9,7 @@ import InlineError from '../messages/InlineError.jsx'
 import firebase_app from '../../firebase'
 
 class ProjectForm extends Component {
-
-
     constructor(props) {
-        console.log('Project Form==', props);
         super(props);
         this.state = {
             data: {
@@ -45,8 +42,6 @@ class ProjectForm extends Component {
                 name: editedProject.name,
                 url: editedProject.url
             });
-
-        console.log('this.state.data---', this.state.data);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -56,7 +51,6 @@ class ProjectForm extends Component {
                 ...prevState.data, ...nextProps.editedProject
             }
         }))
-        console.log('this.state', this.state.data)
     }
 
     onChange(e) {
@@ -68,7 +62,6 @@ class ProjectForm extends Component {
     }
 
     uploadToFirebase(e) {
-        console.log('e000000', e.target.files);
         let file = e.target.files[0];
         let rootRef = firebase_app.storage().ref();
         
@@ -91,12 +84,12 @@ class ProjectForm extends Component {
 
     validate(data) {
         const errors = {};
-        if (!data.id) errors.id = "Can't be blank";
-        if (!data.shortName) errors.shortName = "Can't be blank";
-        if (!data.image) errors.image = "Can't be blank";
-        if (!data.name) errors.name = "Can't be blank";
-        if (!data.url) errors.url = "Can't be blank";
-        if (!data.information) errors.information = "Can't be blank";
+        if (!data.id) errors.id = "Can not be blank";
+        if (!data.shortName) errors.shortName = "Can not be blank";
+        if (!data.image) errors.image = "Can not be blank";
+        if (!data.name) errors.name = "Can not be blank";
+        if (!data.url) errors.url = "Can not be blank";
+        if (!data.information) errors.information = "Can not be blank";
         return errors;
     }
 

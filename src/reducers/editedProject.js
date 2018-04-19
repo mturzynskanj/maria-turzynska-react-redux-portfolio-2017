@@ -9,7 +9,6 @@ const INITIAL_STATE = {};
 */
 function editedProjectReducer(state = INITIAL_STATE, action) {
     const {type, ...payload} = action;
-    console.log('inside the reducers payload is', payload);
     switch (action.type) {
         case EDITED_PROJECT:
             return {

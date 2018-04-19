@@ -3,7 +3,6 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 const Navigation = ({ isAuthenicated }) => {
-    console.log('isAuthenicated...', isAuthenicated)
     return (
         <header className="banner">
             <div className="header-content">

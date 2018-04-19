@@ -64,10 +64,6 @@ const SmlButton = styled.button`
      &:hover {
         color: rgba(255,255, 255, 1);
      }
-
-     &:active {
-       border: 3px solid red;
-     }
 `;
 
 const CustomLink = styled.a`
@@ -78,8 +74,8 @@ const CustomLink = styled.a`
     letter-spacing: 2px;
     position: relative;
     padding: 20px;
-    
     transition: all .3s ease-in-out;
+
     @media (min-width: 768px){
         font-size: 16px;
         padding: 10px 20px;
@@ -118,9 +114,7 @@ const ActiveLink = CustomLink.extend`
     &:hover {
         border: none; 
     }
-
 `;
-
 
 class AdminPage extends Component {
     constructor(props) {
@@ -139,7 +133,6 @@ class AdminPage extends Component {
     }
 
     componentDidMount() {
-        console.log('componentDidMount   this props.products', this.props.projects);
         if (this.props.projects.length === 0) {
             console.log('component did Mount ', this.props.projects.length)
             this.props.getDataFromFirebase().then((pr) => console.log('pr'))

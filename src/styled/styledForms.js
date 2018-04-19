@@ -18,7 +18,6 @@ export const Form = styled.form`
         padding: 10px;
     }
     text-align: center;
-
         label {
             display: inline-block;
             font-size: 16px;
@@ -38,7 +37,7 @@ export const Input = styled.input`
     padding: 8px 16px;
     border-radius: 4px;
     
-    border-color: ${(props) => props.myerror === true ? 'red' : 'rgba(255,255,255,.3)'}
+    border-color: ${(props) => props.myerror === true ? '#F44336' : 'rgba(255,255,255,.3)'}
     @media (min-width: 375px){
         width: 200px;
     } 
@@ -55,9 +54,11 @@ export const FieldSet = styled.fieldset`
    
     span {
         position: absolute; 
+        color: '#F44336'
+        letter-spacing: 1px; 
         @media (min-width: 768px){
             right: 0;
-            bottom:15px;
+            bottom:-15px;
         }  
     }
 `;
@@ -68,5 +69,5 @@ export const Button = styled.button`
     border: none;
     border-radius: 3px;
     background-color: ${props => props.primary ? '#1E88E5' : '#90CAF9'}
-    margin-top:15px;
+    margin-top: 30px;
 `;
